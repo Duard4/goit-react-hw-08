@@ -1,15 +1,27 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import "modern-normalize";
-import App from "./components/App";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store, persistor } from "./redux/store";
+import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@mui/material";
+import "modern-normalize";
+import "./index.css";
+import App from "./App";
+import customTheme from "./components/MuiStyledComponents/CustomTheme";
 
-createRoot(document.getElementById("root")).render(
-	<StrictMode>
+ReactDOM.createRoot(document.getElementById("root")).render(
+	<React.StrictMode>
 		<Provider store={store}>
-			<App />
+			<PersistGate loading={null} persistor={persistor}>
+				<BrowserRouter>
+					<ThemeProvider theme={customTheme}>
+						<Toaster position="bottom-right" />
+						<App />
+					</ThemeProvider>
+				</BrowserRouter>
+			</PersistGate>
 		</Provider>
-	</StrictMode>
+	</React.StrictMode>
 );
