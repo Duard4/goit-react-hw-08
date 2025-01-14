@@ -10,7 +10,7 @@ const HomePage = () => {
 				color="primary"
 				sx={{ letterSpacing: 2, textAlign: "center" }}
 			>
-				Книга Контактів
+				Contact Book
 			</Typography>
 			<Typography
 				variant="h5"
@@ -25,16 +25,15 @@ const HomePage = () => {
 					mx: "auto",
 				}}
 			>
-				Ласкаво просимо до вашого персонального помічника з керування
-				контактами!
+				Welcome to your personal contact management assistant!
 			</Typography>
 			<Typography
 				variant="h5"
 				color="textPrimary"
 				gutterBottom
-				sx={{ mb: 3, textAlign: "center" }}
+				sx={{ textAlign: "center" }}
 			>
-				Основні можливості:
+				Main Features:
 			</Typography>
 			<List
 				component="ul"
@@ -46,11 +45,11 @@ const HomePage = () => {
 					p: 0,
 				}}
 			>
-				<CustomListItem text="Реєстрація та авторизація користувачів" />
-				<CustomListItem text="Додавання, редагування та видалення контактів" />
-				<CustomListItem text="Приватна колекція контактів для кожного користувача" />
-				<CustomListItem text="Фільтрація контактів за ім'ям або номером телефону" />
-				<CustomListItem text="Автоматичне оновлення стану користувача при перезавантаженні" />
+				<CustomListItem text="User registration and authorization" />
+				<CustomListItem text="Adding, editing, and deleting contacts" />
+				<CustomListItem text="Private contact collection for each user" />
+				<CustomListItem text="Contact filtering by name or phone number" />
+				<CustomListItem text="Automatic user state update on reload" />
 			</List>
 		</>
 	);
